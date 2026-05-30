@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap');
+@import 'reset.css';
+@import 'variables.css';
+
+/* ========================
+   BASE
+======================== */
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-corpo);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--fonte-titulo);
+  color: var(--cor-secundaria);
+  line-height: 1.2;
+}
+
+/* ========================
+   HEADER / NAV
+======================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: var(--espaco-sm) var(--espaco-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.header__logo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--tamanho-lg);
+  color: var(--cor-primaria);
+  letter-spacing: 2px;
+}
+
+.nav__lista {
+  display: flex;
+  gap: var(--espaco-md);
+}
+
+.nav__link {
+  font-size: var(--tamanho-sm);
+  color: var(--cor-texto);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color var(--transicao);
+  position: relative;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--cor-primaria);
+  transition: width var(--transicao);
+}
+
+.nav__link:hover {
+  color: var(--cor-primaria);
+}
+
+.nav__link:hover::after {
+  width: 100%;
+}
+
+.nav__link.ativo {
+  color: var(--cor-primaria);
+}
+
+/* Menu hambúrguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--cor-secundaria);
+  transition: all var(--transicao);
+}
+
+/* ========================
+   FOOTER
+======================== */
+.footer {
+  background: var(--cor-fundo-card);
+  border-top: 1px solid var(--cor-borda);
+  padding: var(--espaco-md);
+  text-align: center;
+  color: var(--cor-texto-suave);
+  font-size: var(--tamanho-sm);
+}
+
+.footer__nome {
+  color: var(--cor-primaria);
+  font-family: var(--fonte-titulo);
+  font-size: var(--tamanho-md);
+  margin-bottom: var(--espaco-xs);
+}
+
+/* ========================
+   SEÇÕES GERAIS
+======================== */
+.secao {
+  padding: var(--espaco-lg) var(--espaco-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.secao__titulo {
+  font-size: var(--tamanho-xl);
+  margin-bottom: var(--espaco-md);
+  text-align: center;
+}
+
+.secao__titulo span {
+  color: var(--cor-primaria);
+}
+
+/* ========================
+   CARDS
+======================== */
+.card {
+  background: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  padding: var(--espaco-md);
+  transition: transform var(--transicao), border-color var(--transicao);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--cor-primaria);
+}
+
+/* ========================
+   BOTÕES
+======================== */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: var(--raio-borda);
+  font-family: var(--fonte-titulo);
+  font-size: var(--tamanho-sm);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all var(--transicao);
+}
+
+.btn--primario {
+  background: var(--cor-primaria);
+  color: var(--cor-secundaria);
+}
+
+.btn--primario:hover {
+  background: transparent;
+  border: 1px solid var(--cor-primaria);
+  color: var(--cor-primaria);
+}
+
+/* ========================
+   RESPONSIVIDADE
+======================== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav__lista {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--cor-fundo);
+    padding: var(--espaco-sm) var(--espaco-md);
+    border-top: 1px solid var(--cor-borda);
+  }
+
+  .nav__lista.aberto {
+    display: flex;
+  }
+
+  .secao__titulo {
+    font-size: var(--tamanho-lg);
+  }
+}
+
+/* ========================
+   ANIMAÇÕES
+======================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}

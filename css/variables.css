@@ -1,0 +1,33 @@
+:root {
+  /* Cores */
+  --cor-fundo:       #0a0a0f;
+  --cor-fundo-card:  #13131a;
+  --cor-primaria:    #e8521a;
+  --cor-secundaria:  #ffffff;
+  --cor-destaque:    #4a9eff;
+  --cor-texto:       #cccccc;
+  --cor-texto-suave: #888888;
+  --cor-borda:       #2a2a3a;
+
+  /* Tipografia */
+  --fonte-titulo: 'Orbitron', sans-serif;
+  --fonte-corpo:  'Exo 2', sans-serif;
+
+  --tamanho-sm:  0.875rem;
+  --tamanho-md:  1rem;
+  --tamanho-lg:  1.25rem;
+  --tamanho-xl:  2rem;
+  --tamanho-xxl: 3rem;
+
+  /* Espaçamento */
+  --espaco-xs: 0.5rem;
+  --espaco-sm: 1rem;
+  --espaco-md: 2rem;
+  --espaco-lg: 4rem;
+  --espaco-xl: 8rem;
+
+  /* Outros */
+  --raio-borda:  8px;
+  --transicao:   0.3s ease;
+  --sombra:      0 4px 20px rgba(0, 0, 0, 0.4);
+}

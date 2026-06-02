@@ -2,13 +2,16 @@
 @import 'reset.css';
 @import 'variables.css';
 
-/* ========================
-   BASE
-======================== */
+main {
+  padding-top: 80px;
+}
+
+/* BASE */
 body {
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
   font-family: var(--fonte-corpo);
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -17,9 +20,7 @@ h1, h2, h3, h4 {
   line-height: 1.2;
 }
 
-/* ========================
-   HEADER / NAV
-======================== */
+/* HEADER / NAV */
 .header {
   position: fixed;
   top: 0;
@@ -79,7 +80,7 @@ h1, h2, h3, h4 {
   color: var(--cor-primaria);
 }
 
-/* Menu hambúrguer */
+/* MENU MOBILE */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -94,9 +95,7 @@ h1, h2, h3, h4 {
   transition: all var(--transicao);
 }
 
-/* ========================
-   FOOTER
-======================== */
+/* FOOTER */
 .footer {
   background: var(--cor-fundo-card);
   border-top: 1px solid var(--cor-borda);
@@ -113,9 +112,7 @@ h1, h2, h3, h4 {
   margin-bottom: var(--espaco-xs);
 }
 
-/* ========================
-   SEÇÕES GERAIS
-======================== */
+/* SEÇÕES */
 .secao {
   padding: var(--espaco-lg) var(--espaco-md);
   max-width: 1200px;
@@ -132,9 +129,14 @@ h1, h2, h3, h4 {
   color: var(--cor-primaria);
 }
 
-/* ========================
-   CARDS
-======================== */
+.secao__texto {
+  max-width: 800px;
+  margin: 0 auto var(--espaco-md);
+  text-align: center;
+  font-size: var(--tamanho-md);
+}
+
+/* CARDS */
 .card {
   background: var(--cor-fundo-card);
   border: 1px solid var(--cor-borda);
@@ -148,9 +150,23 @@ h1, h2, h3, h4 {
   border-color: var(--cor-primaria);
 }
 
-/* ========================
-   BOTÕES
-======================== */
+.card__icone {
+  font-size: 3rem;
+  margin-bottom: var(--espaco-sm);
+}
+
+.card__titulo {
+  font-size: var(--tamanho-lg);
+  margin-bottom: var(--espaco-xs);
+  color: var(--cor-primaria);
+}
+
+.card__texto {
+  font-size: var(--tamanho-sm);
+  color: var(--cor-texto);
+}
+
+/* BOTÕES */
 .btn {
   display: inline-block;
   padding: 0.75rem 2rem;
@@ -160,6 +176,7 @@ h1, h2, h3, h4 {
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: all var(--transicao);
+  border: 1px solid transparent;
 }
 
 .btn--primario {
@@ -169,13 +186,129 @@ h1, h2, h3, h4 {
 
 .btn--primario:hover {
   background: transparent;
-  border: 1px solid var(--cor-primaria);
+  border-color: var(--cor-primaria);
   color: var(--cor-primaria);
 }
 
-/* ========================
-   RESPONSIVIDADE
-======================== */
+/* HERO COM IMAGEM REALISTA */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--espaco-lg) var(--espaco-md);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  /* IMAGEM DE FUNDO COM ESCURECIMENTO */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(10, 15, 10, 0.80) 0%,
+      rgba(10, 30, 15, 0.65) 50%,
+      rgba(10, 15, 10, 0.90) 100%
+    ),
+    url('../assets/images/imagem1.jpg') center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+.hero__conteudo {
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  animation: subir 1s ease;
+  padding: var(--espaco-md);
+  background: rgba(10, 15, 10, 0.55);
+  backdrop-filter: blur(8px);
+  border-radius: var(--raio-borda);
+  border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.hero__titulo {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-family: var(--fonte-titulo);
+  letter-spacing: 4px;
+  color: var(--cor-secundaria);
+  margin-bottom: var(--espaco-sm);
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.9);
+}
+
+.hero__titulo span {
+  color: var(--cor-primaria);
+}
+
+.hero__slogan {
+  font-size: var(--tamanho-lg);
+  color: var(--cor-destaque);
+  margin-bottom: var(--espaco-sm);
+  font-style: italic;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero__descricao {
+  font-size: var(--tamanho-md);
+  margin-bottom: var(--espaco-md);
+  color: var(--cor-texto);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
+}
+
+@keyframes subir {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ANTENA PULSANTE */
+.antena {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  font-size: 3rem;
+  z-index: 1;
+}
+
+.onda {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--cor-primaria);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulsar 3s ease-out infinite;
+  opacity: 0;
+}
+
+.onda:nth-child(2) { animation-delay: 1s; }
+.onda:nth-child(3) { animation-delay: 2s; }
+
+@keyframes pulsar {
+  0%   { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(3);   opacity: 0; }
+}
+
+/* DESTAQUES  */
+.destaques__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--espaco-md);
+  margin-top: var(--espaco-md);
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding-bottom: var(--espaco-lg);
+}
+
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
@@ -200,11 +333,20 @@ h1, h2, h3, h4 {
   .secao__titulo {
     font-size: var(--tamanho-lg);
   }
+
+  .antena {
+    bottom: 20px;
+    right: 20px;
+    font-size: 2rem;
+  }
+
+  /* No celular */
+  .hero {
+    background-attachment: scroll;
+  }
 }
 
-/* ========================
-   ANIMAÇÕES
-======================== */
+/* ANIMAÇÕES GERAIS */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -215,3 +357,4 @@ h1, h2, h3, h4 {
   opacity: 1;
   transform: translateY(0);
 }
+

@@ -25,10 +25,122 @@
     </nav>
   </header>
 
-  <!-- Conteudo -->
-  <main style="padding-top: 80px;">
+<!-- Conteudo -->
+<main style="padding-top: 80px;">
 
-  </main>
+  <!-- HERO -->
+  <section class="publico-hero">
+    <div class="publico-hero__conteudo">
+      <p class="publico-hero__badge">Usuários & Atores</p>
+      <h1 class="publico-hero__titulo">
+        Quem está por trás<br>do <span>AgroSat</span>
+      </h1>
+    </div>
+  </section>
+
+  <div class="linha-decorativa"></div>
+
+  <div class="publico-conteudo">
+
+    <!-- INTRO -->
+    <div class="publico-intro fade-in">
+      <p class="publico-intro__texto">
+        O AgroSat foi desenhado para atender diferentes perfis de usuários — do agricultor
+        no interior do Brasil ao satélite que orbita a 700 km de altitude. Cada ator tem
+        um papel específico no ecossistema da plataforma.
+      </p>
+    </div>
+
+    <!-- ATORES -->
+    <h2 class="publico-secao-titulo fade-in">Atores do sistema</h2>
+
+    <div class="atores-grid">
+
+      <!-- AGRICULTOR — destaque -->
+      <div class="ator-card ator-card--agricultor ator-card--destaque fade-in">
+        <div class="ator-card__icone">👨‍🌾</div>
+        <div>
+          <h3 class="ator-card__titulo">Agricultor</h3>
+          <p class="ator-card__texto">
+            Pequeno e médio produtor rural que acessa o app móvel para visualizar mapas de
+            saúde da lavoura, receber alertas de anomalias em tempo real e configurar sua
+            área de monitoramento. Não precisa de nenhum conhecimento técnico — a plataforma
+            traduz dados satelitais complexos em respostas simples e acionáveis.
+          </p>
+          <span class="ator-card__badge">Usuário Primário</span>
+          <div class="ator-card__acesso">
+            <span class="ator-card__acesso-item">App Mobile</span>
+            <span class="ator-card__acesso-item">Alertas Push</span>
+            <span class="ator-card__acesso-item">Mapas NDVI</span>
+            <span class="ator-card__acesso-item">SMS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TÉCNICO AGRÍCOLA -->
+      <div class="ator-card ator-card--tecnico fade-in">
+        <div class="ator-card__icone">🧑‍🔬</div>
+        <h3 class="ator-card__titulo">Técnico Agrícola</h3>
+        <p class="ator-card__texto">
+          Profissional que acessa relatórios detalhados da plataforma para apoiar
+          visitas de campo, emitir laudos técnicos e orientar o agricultor com base
+          em dados históricos de índices espectrais por safra.
+        </p>
+        <div class="ator-card__acesso">
+          <span class="ator-card__acesso-item">Dashboard Web</span>
+          <span class="ator-card__acesso-item">Relatórios</span>
+          <span class="ator-card__acesso-item">Alertas E-mail</span>
+        </div>
+      </div>
+
+      <!-- ADMINISTRADOR -->
+      <div class="ator-card ator-card--admin fade-in">
+        <div class="ator-card__icone">🛡️</div>
+        <h3 class="ator-card__titulo">Administrador</h3>
+        <p class="ator-card__texto">
+          Responsável por gerenciar usuários e propriedades cadastradas, monitorar a
+          saúde do sistema, configurar parâmetros globais de alerta e atualizar os
+          modelos de IA sem necessidade de redeploy.
+        </p>
+        <div class="ator-card__acesso">
+          <span class="ator-card__acesso-item">Painel Admin</span>
+          <span class="ator-card__acesso-item">Gestão de Usuários</span>
+          <span class="ator-card__acesso-item">Config. IA</span>
+        </div>
+      </div>
+
+      <!-- SATÉLITES -->
+      <div class="ator-card ator-card--satelite fade-in">
+        <div class="ator-card__icone">🛰️</div>
+        <h3 class="ator-card__titulo">Satélites / APIs Externas</h3>
+        <p class="ator-card__texto">
+          INPE/CBERS, NASA/Landsat, ESA/Sentinel e Copernicus são consultados
+          automaticamente pelo scheduler diário, sem intervenção humana. Fornecem
+          imagens multiespectrais, dados SAR, temperatura e precipitação que alimentam
+          toda a inteligência da plataforma.
+        </p>
+        <div class="ator-card__acesso">
+          <span class="ator-card__acesso-item">INPE · CBERS</span>
+          <span class="ator-card__acesso-item">NASA · Landsat</span>
+          <span class="ator-card__acesso-item">ESA · Sentinel</span>
+          <span class="ator-card__acesso-item">Copernicus</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="publico-cta fade-in">
+      <p class="publico-cta__texto">
+        Cada ator tem um papel essencial — do campo ao espaço, o AgroSat conecta
+        todos em um único ecossistema de inteligência agrícola.
+      </p>
+      <a href="beneficios.html" class="btn btn--primario">Ver os Benefícios →</a>
+    </div>
+
+  </div>
+
+</main>
 
   <!-- Footer -->
   <footer class="footer">

@@ -1369,3 +1369,192 @@ h1, h2, h3, h4 {
     grid-template-columns: 1fr;
   }
 }
+
+/* ========================
+   PÁGINA: BENEFÍCIOS
+======================== */
+
+/* INTRO */
+.beneficios-intro {
+  max-width: 900px;
+  margin: 0 auto var(--espaco-xl);
+  padding: var(--espaco-lg) 0;
+  border-top: 1px solid var(--cor-borda);
+  border-bottom: 1px solid var(--cor-borda);
+  text-align: center;
+}
+
+.beneficios-intro p {
+  font-size: var(--tamanho-lg);
+  line-height: 1.8;
+  color: var(--cor-texto);
+  font-style: italic;
+}
+
+.beneficios-intro strong {
+  color: var(--cor-primaria);
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* MÉTRICAS DE IMPACTO */
+.metricas__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--espaco-md);
+  margin-bottom: var(--espaco-xl);
+}
+
+.metrica-card {
+  background: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  padding: var(--espaco-md);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transicao);
+}
+
+.metrica-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--cor-primaria);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.metrica-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--cor-primaria);
+}
+
+.metrica-card:hover::before {
+  transform: scaleX(1);
+}
+
+.metrica-card__label {
+  font-family: var(--fonte-titulo);
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espaco-xs);
+}
+
+.metrica-card__numero {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: var(--cor-secundaria);
+  line-height: 1;
+  margin-bottom: var(--espaco-sm);
+}
+
+.metrica-card__texto {
+  font-size: var(--tamanho-sm);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+/* ROTINA DO PRODUTOR (TIMELINE) */
+.rotina__lista {
+  max-width: 900px;
+  margin: 0 auto var(--espaco-xl);
+  position: relative;
+}
+
+.rotina-item {
+  display: grid;
+  grid-template-columns: 100px 40px 1fr;
+  gap: var(--espaco-md);
+  padding: var(--espaco-md) 0;
+  align-items: start;
+}
+
+.rotina-item__horario {
+  font-family: var(--fonte-titulo);
+  font-size: var(--tamanho-lg);
+  font-weight: 900;
+  color: var(--cor-primaria);
+  letter-spacing: 2px;
+  text-align: right;
+  padding-top: 4px;
+}
+
+.rotina-item__linha {
+  position: relative;
+  height: 100%;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.rotina-item__linha::before {
+  content: '';
+  width: 2px;
+  height: 100%;
+  background: var(--cor-borda);
+}
+
+.rotina-item__linha::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--cor-primaria);
+  border: 3px solid var(--cor-fundo);
+  box-shadow: 0 0 0 2px var(--cor-primaria);
+}
+
+.rotina-item:last-child .rotina-item__linha::before {
+  display: none;
+}
+
+.rotina-item__conteudo {
+  background: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  padding: var(--espaco-md);
+  transition: all var(--transicao);
+}
+
+.rotina-item__conteudo:hover {
+  border-color: var(--cor-primaria);
+  transform: translateX(6px);
+}
+
+.rotina-item__titulo {
+  font-size: var(--tamanho-lg);
+  color: var(--cor-secundaria);
+  margin-bottom: var(--espaco-xs);
+}
+
+.rotina-item__texto {
+  font-size: var(--tamanho-sm);
+  color: var(--cor-texto);
+  line-height: 1.7;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .rotina-item {
+    grid-template-columns: 70px 30px 1fr;
+    gap: var(--espaco-sm);
+  }
+
+  .rotina-item__horario {
+    font-size: var(--tamanho-md);
+  }
+
+  .beneficios-intro p {
+    font-size: var(--tamanho-md);
+  }
+}

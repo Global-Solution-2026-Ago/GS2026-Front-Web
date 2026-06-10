@@ -39,7 +39,7 @@ O AgroSat combina **imagens de satélites** (INPE, NASA, Sentinel) com **algorit
 
 | Recurso | Link |
 |---------|------|
-| 🚀 **Site (GitHub Pages)** | [Acessar site](https://global-solution-2026-ago.github.io/GS-Front-Web/) |
+| 🚀 **Site (GitHub Pages)** | [Acessar site](https://global-solution-2026-ago.github.io/GS2026-Front-Web/) |
 | 📦 **Repositório** | [Acessar GitHub](https://github.com/Global-Solution-2026-Ago/GS2026-Front-Web.git) |
 
 ---
